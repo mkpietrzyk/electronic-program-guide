@@ -31,6 +31,7 @@ For Demo purposes -
     * clone repository
     * install packages via 'npm install'
     * run project via 'npm run dev' command
+    * application will run on port 3000, server will be on port 1337. 
 
 
 ### Commits Shortcut Legend:
