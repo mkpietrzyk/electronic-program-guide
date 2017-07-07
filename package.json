@@ -1,0 +1,22 @@
+{
+  "name": "electronic-program-guide",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "nm-mock-api": "git+https://github.com/NoriginMedia/mock-api#cloudberry",
+    "npm-run-all": "^4.0.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.10"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start:mock-api": "./node_modules/.bin/osprey-mock-service -f ./node_modules/nm-mock-api/demo.raml -p 1337 --cors",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "dev": "npm-run-all -p -r start start:mock-api"
+  }
+}
