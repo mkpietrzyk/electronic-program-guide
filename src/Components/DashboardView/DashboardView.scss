@@ -1,51 +1,73 @@
-body {
-  background: #000000;
-  body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #F5F5F5;
-  }
-  body::-webkit-scrollbar {
-    width: 10px;
-    background-color: #F5F5F5;
-  }
-  body::-webkit-scrollbar-thumb {
-    background-color: #000000;
-    border: 2px solid #555555;
-  }
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 
-.epg-channel-wrapper {
-  display: inline-block;
+$main-font: Roboto, sans-serif;
+$darker-color: #000000;
+$primary-color: #212121;
+$lighter-color: #484848;
+$lighter-accent: #ffa040;
+$darker-accent: #c43e00;
+$font-color: #fafafa;
+
+body {
+  background: $darker-color;
+  color: $font-color;
+  font-family: Roboto, sans-serif;
 }
 
 .epg-channels-view {
-  color: aliceblue;
-  background: #212121;
-  list-style: none;
+  background: $primary-color;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
   justify-content: center;
+
+  img {
+    max-height: 50px;
+    max-width: 100px;
+  }
+
+}
+
+.epg-channel-wrapper {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 50px 0;
+
+  background: linear-gradient(
+                  to left,
+                  rgba(0, 0, 0, 0) 0%,
+                  $lighter-color 50%,
+                  rgba(0, 0, 0, 0) 100%
+  ) left bottom $primary-color no-repeat;
+  background-size: 100% 2px;
+
+  :last-child {
+    background: none;
+    background-size: 0;
+  }
 }
 
 .epg-channel-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  width: 13%;
 
-  li{
-    width: 100%;
+  .epg-channel-list__series--current {
+    border-bottom: 1px solid $lighter-accent;
+
   }
-  //.epg-channel-list__title{
-  //  width: 150px;
-  //  background: #484848;
-  //}
+
+  .epg-channel-list__series--next {
+    border-bottom: 1px solid $darker-accent;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-align: left;
+  }
 }
+
+
 
 
 

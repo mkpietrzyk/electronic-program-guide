@@ -5,9 +5,11 @@ import {connect} from 'react-redux'
 import {fetchEPGData} from '../state/serverData/actionCreators'
 import {dateFilter} from '../utilities/dateFilter'
 import {MdLoop, MdCloud} from 'react-icons/lib/md'
+import logoList from '../utilities/importImages'
 import "./DashboardView.css"
 
-const time = "2017-03-18T16:20:00+01:00"
+
+console.log(logoList.channel5)
 
 const mapStateToProps = state => ({
   epgData: state.epgData.epgChannelsData
@@ -16,6 +18,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchEPGData: () => dispatch(fetchEPGData())
 })
+
 
 class DashboardView extends React.Component {
 
@@ -36,35 +39,54 @@ class DashboardView extends React.Component {
         <div className="epg-channels-view">
           <Grid>
             <Row>
-              {console.log(this.props.epgData)}
-
               {this.props.epgData.channels.map(
                   (channel) => {
                     return (
 
-                        <div className="epg-channel-wrapper">
-                          <div className="epg-channel__title">
-                            <b>{channel.title}</b>
-                          </div>
-                          <ul className="epg-channel-list">
+                        <Col xs={12} className="epg-channel-wrapper">
 
+                          <Col xs={12} lg={2} className="epg-channel__logo">
+                            <div>
+                              <img src={logoList[channel.id]} alt={channel.title}/>
+                            </div>
+                          </Col>
+
+                          <Col xs={12} lg={10} className="epg-channel-list">
                             {channel.schedules.map(
                                 series => ({
                                   ...series,
                                 })
-                            ).filter((series) => {
-                                 return dateFilter(series.start,series.end,time)
+                            ).filter((seriesToFilter) => {
+                                  return dateFilter(seriesToFilter.start, seriesToFilter.end)
                                 }
-                            ).map((series) => {
-                                  return (<li key={series.start + series.end} className="epg-channel-list__series">
-                                    {series.title}
-                                  </li>)
+                            ).map((seriesOnScreen, index) => {
+                                  switch (index) {
+                                    case 0:
+                                      return (
+                                          <Col xs={12} lg={4} key={seriesOnScreen.start + seriesOnScreen.end}
+                                               className="epg-channel-list__series--current">
+                                            <p>Playing now</p>
+                                            {seriesOnScreen.title}
+                                          </Col>)
+                                    case 1:
+                                      return (
+                                          <Col xs={12} lg={4} key={seriesOnScreen.start + seriesOnScreen.end}
+                                               className="epg-channel-list__series--next">
+                                            <p>Upcoming</p>
+                                            {seriesOnScreen.title}
+                                          </Col>)
+                                    default:
+                                      return false
+                                  }
                                 }
                             )}
 
+                            <Col xs={2}>
+                              Add to favorites
+                            </Col>
 
-                          </ul>
-                        </div>
+                          </Col>
+                        </Col>
                     )
                   }
               )}
@@ -75,7 +97,6 @@ class DashboardView extends React.Component {
     )
   }
 }
-
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardView)
