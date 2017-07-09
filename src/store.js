@@ -1,8 +1,10 @@
 import {compose, createStore, combineReducers, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 
-const reducer = combineReducers({
+import epgReducer from './Components/state/serverData/reducer'
 
+const reducer = combineReducers({
+  epgData: epgReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

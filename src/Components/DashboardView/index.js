@@ -1,3 +1,1 @@
-/**
- * Created by Mikoziq on 09.07.2017.
- */
+export {default as DashboardView} from './DashboardView'

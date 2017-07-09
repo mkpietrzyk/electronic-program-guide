@@ -11,11 +11,13 @@ import store from './store'
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap-theme.css";
 
+import {DashboardView} from './Components/DashboardView'
+
 ReactDOM.render(
     <Provider store={store}>
       <Router history={browserHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={App}/>
+          <IndexRoute component={DashboardView}/>
         </Route>
       </Router>
     </Provider>,
