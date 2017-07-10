@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");
 body {
-  background: #000000;
+  background: #131313;
   color: #fafafa;
   font-family: Roboto, sans-serif; }
 
 .epg-channels-view {
-  background: #212121;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,20 +18,51 @@ body {
   text-align: center;
   font-weight: 700;
   font-size: 2rem;
-  padding: 50px 0;
+  margin: 10px 0;
+  padding: 0;
   background: linear-gradient(to left, transparent 0%, #484848 50%, transparent 100%) left bottom #212121 no-repeat;
   background-size: 100% 2px; }
   .epg-channel-wrapper :last-child {
     background: none;
     background-size: 0; }
 
-.epg-channel-list .epg-channel-list__series--current {
-  border-bottom: 1px solid #ffa040; }
-.epg-channel-list .epg-channel-list__series--next {
-  border-bottom: 1px solid #c43e00; }
-.epg-channel-list p {
-  font-weight: 300;
-  font-size: 1.5rem;
-  text-align: left; }
+.epg-channel-logo {
+  background-color: #212121;
+  -webkit-box-shadow: 10px 0 15px 5px #131313;
+  -moz-box-shadow: 10px 0 15px 5px #131313;
+  box-shadow: 10px 0 15px 5px #131313;
+  z-index: 500; }
+
+.epg-channel-list {
+  padding: 0; }
+  .epg-channel-list svg {
+    font-size: 5rem; }
+  .epg-channel-list p {
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-align: left; }
+
+.epg-channel-logo-wrapper,
+.epg-channel-list__series--current,
+.epg-channel-list__series--next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; }
+
+.epg-channel-logo-wrapper {
+  background-color: #484848; }
+
+.epg-channel-list__series--current {
+  border-bottom: 1px solid #ffa040;
+  transition: all .3s linear; }
+  .epg-channel-list__series--current:hover {
+    box-shadow: inset 0px -150px 0px 0px #ffa040; }
+
+.epg-channel-list__series--next {
+  border-bottom: 1px solid #c43e00;
+  transition: all .3s linear; }
+  .epg-channel-list__series--next:hover {
+    box-shadow: inset 0px -150px 0px 0px #c43e00; }
 
 /*# sourceMappingURL=DashboardView.css.map */

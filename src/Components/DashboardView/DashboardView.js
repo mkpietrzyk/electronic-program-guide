@@ -4,7 +4,9 @@ import {Button, Col, Grid, Row} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {fetchEPGData} from '../state/serverData/actionCreators'
 import {dateFilter} from '../utilities/dateFilter'
+import {convertToClockTime} from '../utilities/convertToClockTime'
 import {MdLoop, MdCloud} from 'react-icons/lib/md'
+import {FaAngleDoubleRight, FaAngleRight} from 'react-icons/lib/fa'
 import logoList from '../utilities/importImages'
 import "./DashboardView.css"
 
@@ -45,8 +47,8 @@ class DashboardView extends React.Component {
 
                         <Col xs={12} className="epg-channel-wrapper">
 
-                          <Col xs={12} lg={2} className="epg-channel__logo">
-                            <div>
+                          <Col xs={12} lg={2} className="epg-channel-logo">
+                            <div className="epg-channel-logo-wrapper">
                               <img src={logoList[channel.id]} alt={channel.title}/>
                             </div>
                           </Col>
@@ -61,30 +63,44 @@ class DashboardView extends React.Component {
                                 }
                             ).map((seriesOnScreen, index) => {
                                   switch (index) {
+
                                     case 0:
                                       return (
-                                          <Col xs={12} lg={4} key={seriesOnScreen.start + seriesOnScreen.end}
+                                          <Col xs={12} lg={6} key={seriesOnScreen.start + seriesOnScreen.end}
                                                className="epg-channel-list__series--current">
-                                            <p>Playing now</p>
-                                            {seriesOnScreen.title}
+
+                                            <Col xs={10}>
+                                              <p>Playing now from {convertToClockTime(seriesOnScreen.start)}</p>
+                                              {seriesOnScreen.title}
+                                            </Col>
+
+                                            <Col xs={2}>
+                                              <FaAngleRight/>
+                                            </Col>
+
                                           </Col>)
+
                                     case 1:
                                       return (
-                                          <Col xs={12} lg={4} key={seriesOnScreen.start + seriesOnScreen.end}
+                                          <Col xs={12} lg={6} key={seriesOnScreen.start + seriesOnScreen.end}
                                                className="epg-channel-list__series--next">
-                                            <p>Upcoming</p>
-                                            {seriesOnScreen.title}
+
+                                            <Col xs={10}>
+                                              <p>Upcoming at {convertToClockTime(seriesOnScreen.start)}
+                                              </p>
+                                              {seriesOnScreen.title}
+                                            </Col>
+
+                                            <Col xs={2}>
+                                              <FaAngleDoubleRight/>
+                                            </Col>
+
                                           </Col>)
                                     default:
                                       return false
                                   }
                                 }
                             )}
-
-                            <Col xs={2}>
-                              Add to favorites
-                            </Col>
-
                           </Col>
                         </Col>
                     )

@@ -1,4 +1,4 @@
-const time = "2017-03-18T14:23:00+01:00"
+const time = "2017-03-18T16:20:00+01:00"
 
 export const dateFilter = (start, end) => {
   let currentTime = new Date(time)

@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 
 $main-font: Roboto, sans-serif;
-$darker-color: #000000;
+$darker-color: #131313;
 $primary-color: #212121;
 $lighter-color: #484848;
 $lighter-accent: #ffa040;
 $darker-accent: #c43e00;
 $font-color: #fafafa;
+
+@mixin gradient-background($color) {
+  background: $darker-color;
+  background: -moz-radial-gradient(center, ellipse cover, $primary-color 0%, $darker-color 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, $primary-color 0%,$darker-color 100%);
+  background: radial-gradient(ellipse at center, $primary-color 0%,$darker-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=1 );
+}
 
 body {
   background: $darker-color;
@@ -15,7 +23,6 @@ body {
 }
 
 .epg-channels-view {
-  background: $primary-color;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +40,8 @@ body {
   text-align: center;
   font-weight: 700;
   font-size: 2rem;
-  padding: 50px 0;
+  margin: 10px 0;
+  padding: 0;
 
   background: linear-gradient(
                   to left,
@@ -49,15 +57,21 @@ body {
   }
 }
 
+.epg-channel-logo {
+  background-color: $primary-color;
+  -webkit-box-shadow: 10px 0 15px 5px $darker-color;
+  -moz-box-shadow: 10px 0 15px 5px $darker-color;
+  box-shadow: 10px 0 15px 5px $darker-color;
+  z-index: 500;
+
+}
+
 .epg-channel-list {
 
-  .epg-channel-list__series--current {
-    border-bottom: 1px solid $lighter-accent;
+  padding: 0;
 
-  }
-
-  .epg-channel-list__series--next {
-    border-bottom: 1px solid $darker-accent;
+  svg{
+    font-size: 5rem;
   }
 
   p {
@@ -66,6 +80,39 @@ body {
     text-align: left;
   }
 }
+
+
+
+.epg-channel-logo-wrapper,
+.epg-channel-list__series--current,
+.epg-channel-list__series--next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.epg-channel-logo-wrapper{
+  background-color: $lighter-color;
+}
+
+
+.epg-channel-list__series--current {
+  border-bottom: 1px solid $lighter-accent;
+  transition: all .3s linear;
+  &:hover{
+    box-shadow: inset 0px -150px 0px 0px $lighter-accent;
+  }
+}
+
+.epg-channel-list__series--next {
+  border-bottom: 1px solid $darker-accent;
+  transition: all .3s linear;
+  &:hover{
+    box-shadow: inset 0px -150px 0px 0px $darker-accent;
+  }
+}
+
 
 
 
