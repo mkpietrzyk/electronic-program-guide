@@ -1,5 +1,6 @@
 footer {
-  background: #484848;
+  background: #212121;
+  color: #484848;
   display: flex;
   flex-direction: column;
   justify-content: center;

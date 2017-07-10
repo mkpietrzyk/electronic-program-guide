@@ -1,7 +1,8 @@
 @import '../globalStyles/_colorPalette.scss';
 
 footer {
-  background: $lighter-color;
+  background: $primary-color;
+  color: $lighter-color;
   display: flex;
   flex-direction: column;
   justify-content: center;
