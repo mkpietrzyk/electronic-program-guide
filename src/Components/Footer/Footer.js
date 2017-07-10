@@ -1,5 +1,4 @@
 import React from 'react'
-import {Grid, Row, Col} from 'react-bootstrap'
 
 //Mark: media and styling imports
 import {FaHeart} from 'react-icons/lib/fa'

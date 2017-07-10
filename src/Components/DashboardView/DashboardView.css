@@ -50,12 +50,14 @@ body {
   border-bottom: 1px solid #ffa040;
   transition: all .3s linear; }
   .epg-channel-list__series--current:hover {
-    box-shadow: inset 0px -150px 0px 0px #ffa040; }
+    box-shadow: inset 0px -150px 0px 0px #ffa040;
+    cursor: pointer; }
 
 .epg-channel-list__series--next {
   border-bottom: 1px solid #c43e00;
   transition: all .3s linear; }
   .epg-channel-list__series--next:hover {
-    box-shadow: inset 0px -150px 0px 0px #c43e00; }
+    box-shadow: inset 0px -150px 0px 0px #c43e00;
+    cursor: pointer; }
 
 /*# sourceMappingURL=DashboardView.css.map */

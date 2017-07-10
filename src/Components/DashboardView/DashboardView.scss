@@ -70,6 +70,7 @@ body {
   transition: all .3s linear;
   &:hover{
     box-shadow: inset 0px -150px 0px 0px $lighter-accent;
+    cursor: pointer;
   }
 }
 
@@ -78,6 +79,7 @@ body {
   transition: all .3s linear;
   &:hover{
     box-shadow: inset 0px -150px 0px 0px $darker-accent;
+    cursor: pointer;
   }
 }
 

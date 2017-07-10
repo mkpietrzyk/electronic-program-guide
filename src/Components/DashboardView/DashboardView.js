@@ -5,6 +5,8 @@ import {fetchEPGData} from '../state/serverData/actionCreators'
 import {dateFilter} from '../utilities/dateFilter'
 import {convertToClockTime} from '../utilities/convertToClockTime'
 
+import Scroll  from 'react-scroll'
+
 //Mark: other site components imports
 import {Header} from '../Header'
 import {Footer} from '../Footer'
@@ -13,6 +15,9 @@ import {Footer} from '../Footer'
 import {FaAngleDoubleRight, FaAngleRight} from 'react-icons/lib/fa'
 import logoList from '../utilities/importImages'
 import "./DashboardView.css"
+
+
+const Navigate = Scroll.Element;
 
 
 const mapStateToProps = state => ({
@@ -40,15 +45,16 @@ class DashboardView extends React.Component {
     }
 
     return (
-        <div className="epg-channels-view">
+        <div ref="schedules" className="epg-channels-view">
           <Header/>
           <Grid>
+            <Navigate name="myNavigationAnchor"/>
             <Row>
               {this.props.epgData.channels.map(
                   (channel) => {
                     return (
 
-                        <Col xs={12} className="epg-channel-wrapper">
+                        <Col xs={12} key={channel.id} className="epg-channel-wrapper">
 
                           <Col xs={12} lg={2} className="epg-channel-logo">
                             <div className="epg-channel-logo-wrapper">
