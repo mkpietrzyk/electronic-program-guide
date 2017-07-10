@@ -1,14 +1,21 @@
 import React from 'react'
-// import {Link} from 'react-router'
-import {Button, Col, Grid, Row} from 'react-bootstrap'
+import {Col, Grid, Row} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {fetchEPGData} from '../state/serverData/actionCreators'
 import {dateFilter} from '../utilities/dateFilter'
 import {convertToClockTime} from '../utilities/convertToClockTime'
+
+//Mark: other site components imports
+import {Footer} from '../Footer'
+
+//Mark: media and styling imports
 import {MdLoop, MdCloud} from 'react-icons/lib/md'
 import {FaAngleDoubleRight, FaAngleRight} from 'react-icons/lib/fa'
 import logoList from '../utilities/importImages'
 import "./DashboardView.css"
+
+
+
 
 
 console.log(logoList.channel5)
@@ -109,6 +116,7 @@ class DashboardView extends React.Component {
 
             </Row>
           </Grid>
+          <Footer/>
         </div>
     )
   }

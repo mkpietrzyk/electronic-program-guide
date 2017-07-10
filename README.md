@@ -4,9 +4,9 @@
 
 ### Project description
 
-Basic application using parallel ran scripts, showing an electronic program guide. 
+Disclaimer: That was done basically in 12+ hours straight.  
 
-For Demo purposes - 
+Basic application using parallel ran scripts, showing an electronic program guide for specific date covered. 
         
     
 
@@ -21,9 +21,11 @@ For Demo purposes -
 * Styling
 
     * react-bootstrap
-    * react-icons
+        * Grid style for RWD compatibility
+    * react-icons (font awesome)
     * styling done using SCSS files
-        
+    * color pallete used:
+        * material design: https://material.io/color/#!/?view.left=0&view.right=0&primary.color=212121&secondary.color=FF6F00&primary.text.color=FAFAFA
 
  
 ### How to run

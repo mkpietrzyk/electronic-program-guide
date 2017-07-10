@@ -1,0 +1,13 @@
+footer {
+  background: #484848;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin-top: 50px; }
+  footer svg {
+    color: #ffa040; }
+
+/*# sourceMappingURL=Footer.css.map */

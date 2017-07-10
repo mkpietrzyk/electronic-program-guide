@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,MAAO;EACL,UAAU,ECDI,OAAO;EDErB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,IAAI;EAEhB,UAAG;IACD,KAAK,ECVQ,OAAO",
+"sources": ["Footer.scss","../globalStyles/_colorPalette.scss"],
+"names": [],
+"file": "Footer.css"
+}

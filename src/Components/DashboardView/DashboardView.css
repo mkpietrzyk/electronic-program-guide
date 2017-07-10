@@ -15,16 +15,12 @@ body {
     max-width: 100px; }
 
 .epg-channel-wrapper {
+  background: #212121;
   text-align: center;
   font-weight: 700;
   font-size: 2rem;
   margin: 10px 0;
-  padding: 0;
-  background: linear-gradient(to left, transparent 0%, #484848 50%, transparent 100%) left bottom #212121 no-repeat;
-  background-size: 100% 2px; }
-  .epg-channel-wrapper :last-child {
-    background: none;
-    background-size: 0; }
+  padding: 0; }
 
 .epg-channel-logo {
   background-color: #212121;
@@ -49,9 +45,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 150px; }
-
-.epg-channel-logo-wrapper {
-  background-color: #484848; }
 
 .epg-channel-list__series--current {
   border-bottom: 1px solid #ffa040;

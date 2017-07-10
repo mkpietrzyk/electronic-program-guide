@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
-
-$main-font: Roboto, sans-serif;
-$darker-color: #131313;
-$primary-color: #212121;
-$lighter-color: #484848;
-$lighter-accent: #ffa040;
-$darker-accent: #c43e00;
-$font-color: #fafafa;
-
-@mixin gradient-background($color) {
-  background: $darker-color;
-  background: -moz-radial-gradient(center, ellipse cover, $primary-color 0%, $darker-color 100%);
-  background: -webkit-radial-gradient(center, ellipse cover, $primary-color 0%,$darker-color 100%);
-  background: radial-gradient(ellipse at center, $primary-color 0%,$darker-color 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=1 );
-}
+@import '../globalStyles/_colorPalette.scss';
 
 body {
   background: $darker-color;
@@ -37,24 +22,12 @@ body {
 }
 
 .epg-channel-wrapper {
+  background: $primary-color;
   text-align: center;
   font-weight: 700;
   font-size: 2rem;
   margin: 10px 0;
   padding: 0;
-
-  background: linear-gradient(
-                  to left,
-                  rgba(0, 0, 0, 0) 0%,
-                  $lighter-color 50%,
-                  rgba(0, 0, 0, 0) 100%
-  ) left bottom $primary-color no-repeat;
-  background-size: 100% 2px;
-
-  :last-child {
-    background: none;
-    background-size: 0;
-  }
 }
 
 .epg-channel-logo {
@@ -91,11 +64,6 @@ body {
   align-items: center;
   height: 150px;
 }
-
-.epg-channel-logo-wrapper{
-  background-color: $lighter-color;
-}
-
 
 .epg-channel-list__series--current {
   border-bottom: 1px solid $lighter-accent;
