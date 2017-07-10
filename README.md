@@ -21,6 +21,8 @@ Basic Single Page Application using parallel-ran npm scripts, showing an electro
         * from : 2017-03-18T<b>16:20</b>:00+01:00 to 2017-03-18T<b>17:20</b>:00+01:00
 * App is ready for production purposes
 
+* App is easy to be migrated into React-Native environment (for Android at least).
+
 ### Featured libraries/frameworks
 
 * Core
@@ -62,6 +64,8 @@ Basic Single Page Application using parallel-ran npm scripts, showing an electro
 * Probably the name convention of DashboardView should be renamed into 'EpgView', if we want to make the Dashboard our main view and we keep in mind that in the future, there will be details pages about channels/series etc. 
 
 * Some mixins to work with on SCSS side
+
+* Since there is no more components (details pages etc.) to navigate to, menu is not needed for now. Yet it is pre-made and ready to be implemented
 
 
     

@@ -6,19 +6,14 @@ import {dateFilter} from '../utilities/dateFilter'
 import {convertToClockTime} from '../utilities/convertToClockTime'
 
 //Mark: other site components imports
+import {Header} from '../Header'
 import {Footer} from '../Footer'
 
 //Mark: media and styling imports
-import {MdLoop, MdCloud} from 'react-icons/lib/md'
 import {FaAngleDoubleRight, FaAngleRight} from 'react-icons/lib/fa'
 import logoList from '../utilities/importImages'
 import "./DashboardView.css"
 
-
-
-
-
-console.log(logoList.channel5)
 
 const mapStateToProps = state => ({
   epgData: state.epgData.epgChannelsData
@@ -46,6 +41,7 @@ class DashboardView extends React.Component {
 
     return (
         <div className="epg-channels-view">
+          <Header/>
           <Grid>
             <Row>
               {this.props.epgData.channels.map(
